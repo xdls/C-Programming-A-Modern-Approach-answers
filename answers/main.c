@@ -2,19 +2,16 @@
 
 int main(void)
 {
-    int n;
-    float e = 1.0f;
+  char ch;
+  int len = 0;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
+  printf("Enter a message: ");
+  ch = getchar();
+  while (ch != '\n') {
+    len++;
+    ch = getchar();
+  }
+  printf("Your message was %d character(s) long.\n", len);
 
-    int i, factorial = 1;
-    for (i = 1; i <= n; i++) {
-
-        factorial *= i;
-        e += (1.0f / factorial);
-    }
-
-    printf("%f", e);
-    return 0;
+  return 0;
 }
